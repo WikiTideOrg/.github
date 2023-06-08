@@ -37,7 +37,7 @@ jobs:
           src_path: workflow-templates/action.yml
           src_branch: master
           dst_path: .github/workflows/mediawiki-tests.yml
-          dst_owner: miraheze
+          dst_owner: WikiForge
           dst_repo_name: ${{ matrix.repository }}
           dst_branch: master
           commit_message: |
