@@ -3,7 +3,6 @@ on:
     paths:
       - workflow-templates/action.yml
       - .github/workflows/sync-tests.yml
-
 jobs:
   copy:
     strategy:
