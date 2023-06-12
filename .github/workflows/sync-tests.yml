@@ -3,26 +3,28 @@ on:
     paths:
       - workflow-templates/action.yml
       - .github/workflows/sync-tests.yml
+
 jobs:
   copy:
     strategy:
       matrix:
         repository:
-          - ManageWiki
           - CreateWiki
           - DataDump
-          - MirahezeMagic
-          - WikiDiscover
-          - RemovePII
+          - FileStorageMonitor
           - GlobalNewFiles
-          - MatomoAnalytics
-          - IncidentReporting
-          - RottenLinks
           - ImportDump
-          - CustomHeader
+          - IncidentReporting
+          - ManageWiki
+          - MatomoAnalytics
+          - PDFEmbed
+          - RemovePII
+          - RottenLinks
           - SpriteSheet
           - YouTube
-          - PDFEmbed
+          - WikiDiscover
+          - WikiForgeMagic
+          - WikiTideMagic
 
     runs-on: ubuntu-latest
     steps:
