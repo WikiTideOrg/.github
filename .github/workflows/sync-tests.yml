@@ -1,5 +1,6 @@
 on:
   push:
+    branches: [ master ]
     paths:
       - workflow-templates/action.yml
       - .github/workflows/sync-tests.yml
@@ -31,6 +32,17 @@ jobs:
       - run: |
           echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
           echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
+          echo "GITHUB_ACTOR=${GITHUB_ACTOR}" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Extract commit information
+        id: extract_commit
+        run: |
+          echo "::set-output name=short_message::$(git log -1 --pretty=%s)"
+          echo "::set-output name=long_message::$(git log -1 --pretty=%B)"
+
       - name: Copy workflow
         uses: andstor/copycat-action@v3
         with:
@@ -42,6 +54,10 @@ jobs:
           dst_repo_name: ${{ matrix.repository }}
           dst_branch: master
           commit_message: |
-            Update workflow
+            Update workflow: ${{ steps.extract_commit.outputs.short_message }}
+
+            ${{ steps.extract_commit.outputs.long_message }}
 
             from ${{ env.GITHUB_REPOSITORY }} (https://github.com/${{ env.GITHUB_REPOSITORY }}/commit/${{ env.GITHUB_SHA }})
+
+            ${{ env.GITHUB_ACTOR != 'Universal-Omega' && join(['Co-authored-by:', env.GITHUB_ACTOR], ' ') || '' }}
