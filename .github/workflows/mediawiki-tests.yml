@@ -112,6 +112,7 @@ jobs:
 
           if [ -d src/extensions/CreateWiki ] || [ "${{ github.event.repository.name }}" == 'CreateWiki' ]; then
             curl -sL https://raw.githubusercontent.com/WikiForge/ci-scripts/master/mediawiki/globals/setup-CreateWiki.php >> src/includes/DevelopmentSettings.php
+            curl -sL https://raw.githubusercontent.com/WikiForge/ci-scripts/master/mediawiki/sql/add-wiki.sql >> src/maintenance/add-wiki.sql
           fi
 
           echo '<?php' >> src/includes/DevelopmentSettings.php
