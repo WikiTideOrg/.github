@@ -45,7 +45,7 @@ jobs:
 
       # Remove the checked-out repository to clean up
       - name: Remove checked-out repository
-        run: rm -rf $GITHUB_WORKSPACE
+        run: rm -rf $GITHUB_WORKSPACE/.github
 
       - name: Copy workflow
         uses: andstor/copycat-action@v3
