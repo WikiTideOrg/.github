@@ -13,7 +13,6 @@ jobs:
           - CreateWiki
           - DataDump
           - FileStorageMonitor
-          - GlobalNewFiles
           - ImportDump
           - IncidentReporting
           - ManageWiki
@@ -25,7 +24,6 @@ jobs:
           - YouTube
           - WikiDiscover
           - WikiForgeMagic
-          - WikiTideMagic
 
     runs-on: ubuntu-latest
     steps:
