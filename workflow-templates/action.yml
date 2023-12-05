@@ -12,18 +12,11 @@ jobs:
     strategy:
       matrix:
         include:
-          # Latest MediaWiki LTS - PHP 8.2 
-          - mw: 'REL1_39'
-            php: 8.2
-            php-docker: 82
-            composer-test: true
-            experimental: false
-
           # Latest MediaWiki stable - PHP 8.2 
           - mw: 'REL1_40'
             php: 8.2
             php-docker: 82
-            composer-test: false
+            composer-test: true
             experimental: true
 
           # Latest MediaWiki release branch - PHP 8.2 
