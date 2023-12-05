@@ -10,20 +10,8 @@ jobs:
     strategy:
       matrix:
         repository:
-          - CreateWiki
-          - DataDump
-          - FileStorageMonitor
-          - ImportDump
-          - IncidentReporting
-          - ManageWiki
-          - MatomoAnalytics
-          - PDFEmbed
-          - RemovePII
-          - RottenLinks
-          - SpriteSheet
-          - YouTube
-          - WikiDiscover
-          - WikiForgeMagic
+          - GlobalNewFiles
+          - WikiTideMagic
 
     runs-on: ubuntu-latest
     steps:
@@ -52,7 +40,7 @@ jobs:
           src_path: workflow-templates/action.yml
           src_branch: master
           dst_path: .github/workflows/mediawiki-tests.yml
-          dst_owner: WikiForge
+          dst_owner: WikiTideOrg
           dst_repo_name: ${{ matrix.repository }}
           dst_branch: master
           commit_message: |

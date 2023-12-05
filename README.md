@@ -1,2 +1,2 @@
 # .github
-Default [GitHub files](https://help.github.com/en/github/building-a-strong-community/creating-a-default-community-health-file) for the WikiForge organization.
+Default [GitHub files](https://help.github.com/en/github/building-a-strong-community/creating-a-default-community-health-file) for the WikiTide organization.
